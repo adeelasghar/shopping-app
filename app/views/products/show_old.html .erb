@@ -1,0 +1,19 @@
+
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron">
+  <strong>Name:</strong>
+    <%= @product.name %>
+  <p class="lead">
+      <strong>Text:</strong>
+        <%= @product.text %>
+      <br/>
+      <strong>Price:</strong>
+        <%= @product.price %>
+      <br/>
+  </p>
+  <br/>
+<%= link_to 'Edit', edit_product_path(@product), class:"btn btn-secondary" %>   
+<%= link_to 'Back', products_path, class:"btn btn-dark" %>
+
+</div>

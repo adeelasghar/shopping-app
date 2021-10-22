@@ -1,0 +1,28 @@
+<!-- <p id="notice"><%= notice %></p>
+ -->
+<h1>Categories</h1>
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+    <tr>
+      <th style="width: 20%;">Name</th>
+      <th style="width: 60%;">Text</th>
+      <th ></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td ><%= category.text %></td>
+        <td>
+        <span><%= link_to 'Show', category, class:"btn btn-outline-secondary  btn-sm"  %> </span>
+        <span><%= link_to 'Edit', edit_category_path(category), class: "btn btn-outline-secondary btn-sm"  %></span>
+        <span><%= link_to 'Destroy' , category, method: :delete, data: { confirm: 'Are you sure?' },  class:"btn btn-outline-danger btn-sm"  %><span>
+
+      </td>
+           </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

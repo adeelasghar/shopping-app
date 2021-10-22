@@ -1,0 +1,48 @@
+<%= form_with(model: order) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field form-group">
+      <%= form.label :product_id %>
+      <%= form.number_field :product_id,  class:"form-control", placeholder:"Product Id"  %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :user_id %>
+      <%= form.number_field :user_id,  class:"form-control", placeholder:"User Id"  %>
+    </div>
+
+     <div class="field form-group">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity,  class:"form-control", placeholder:"Quantity"  %>
+    </div>
+
+  <div class="actions">
+    <table>
+      <tr>
+        <td>
+          <%= form.submit class:'btn btn-outline-primary btn-sm'%>
+        </td>
+         <td>
+
+          <%= link_to 'Show', @order,  class: "btn btn-outline-secondary btn-sm"  %> |
+        </td>
+         <td>
+          <%= link_to 'Back', orders_path,  class: "btn btn-dark btn-sm"  %>
+        </td>
+      </tr>
+    </table>
+  </div>
+<% end %>
+
+
+  

@@ -1,0 +1,46 @@
+<%= form_with(model: product) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name,  class:"form-control", placeholder:"Name"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :text %>
+    <%= form.text_field :text,  class:"form-control", placeholder:"Text"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :price %>
+    <%= form.number_field :price,  class:"form-control", placeholder:"Price"  %>
+  </div>
+
+
+  <div class="actions">
+    <table>
+      <tr>
+        <td>
+          <%= form.submit class:'btn btn-outline-primary btn-sm'%>
+        </td>
+         <td>
+
+          <%= link_to 'Show', @product,  class: "btn btn-outline-secondary btn-sm"  %> |
+        </td>
+         <td>
+          <%= link_to 'Back', products_path,  class: "btn btn-dark btn-sm"  %>
+        </td>
+      </tr>
+    </table>
+  </div>
+<% end %>

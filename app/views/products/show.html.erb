@@ -1,0 +1,55 @@
+
+<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="main-body">
+      <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Full Name</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <%= @product.name %>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Text</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <%= @product.text %>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Price</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <%= @product.price %>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Status</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+            Active
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Address</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              Bay Area, San Francisco, CA
+            </div>
+          </div>
+          </div>
+          <hr>
+    </div> 
+    <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-secondary" %>   
+    <%= link_to 'Back', products_path, class:"btn btn-dark" %>     
+</div>
